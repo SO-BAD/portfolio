@@ -4,22 +4,107 @@
     box-sizing: border-box;
     font-family: 'Microsoft JhengHei';
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #333;
 }
-.menu{
+.top{
     width: 100%;
     height: 60px;
     background-color: #c0c0c0;
+    position: fixed;
+    top:0px;
+    left:0px;
+}
+.menu{
+    float: right;
+    height: 100%;
+    display: flex;
+}
+.menu_items{
+    width: 120px;
+    height: 100%;
+    background-color: #334bd3;
+    text-align: center;
+    margin-left: 10px;
+}
+.menu_items a{
+    color:white;
+    text-decoration: none;
+    font-weight: bolder;
 }
 #intro{
     width: 100%;
     height:820px;
+    color:white;
+}
+.abc{
+    width: 100%;
+    height: 60px;
+}
+
+
+#exp{
+    width: 30%;
+    margin: 10px 5%;
+}
+#skill{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.skill{
+    width: 47%;
+    margin-top:10px;
+    margin-left:2%;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    color:white;
+}
+
+@media screen and (max-width: 800px){
+    #mid{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .skill{
+        width: 94%;
+        margin-left:3%;
+    }
+}
+.img{
+    width: 60px;
+    height: 60px;
+    background-color: aqua;
+}
+.skill_intro{
+    margin-left:10px;
+    width: calc(100% - 60px);
+    height: 60px;
+}
+.full_level{
+    width: 90%;
+    height: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #c0c0c0;
+}
+.level{
+    width: 75%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #334bd3;
 }
 
 #collections{
     margin: auto;
-    width: 75%;
+    width: 80%;
     height:820px;
     background-color: #6a6a6a;
     display: flex;
@@ -44,7 +129,7 @@ body{
 
 .footer{
     width: 100%;
-    height: 60px;
+    padding: 20px 0px;
     background-color: rgb(22, 13, 61);
     color:#fef3f8;
     text-align: center;
