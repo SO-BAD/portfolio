@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php include_once "share/base.php";?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,7 @@
                 <a href="#a">HOME</a>
             </div>
             <div class="menu_items">
-                <a href="#b">skill</a>
+                <a href="#b">SKILL</a>
             </div>
             <div class="menu_items">
                 <a href="#c">COLLECTIONS</a>
@@ -34,118 +34,13 @@
     <div class="abc" id ="b">
 
     </div>
-    <div id="skill">
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>HTML5</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>CSS3</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>JS</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>JQ</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>HTML5</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>HTML5</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="img">
-
-            </div>
-            <div class="skill_intro">
-                <h2>HTML5</h2>
-                <div class="full_level">
-                    <div class="level">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include "include/skill.php";?>
     <div class="abc" id ="c">
 
     </div>
 
-    <div id="collections">
-        <div class="work_item">
-
-        </div>
-        <div class="work_item">
-
-        </div>
-        <div class="work_item">
-
-        </div>
-        <div class="work_item">
-
-        </div>
-
-    </div>
+    <?php include "include/collection.php";?>
+    
     <footer class="footer">
                 <h2>ConTact</h2>
                 <span>Email : abc@gmail.com</span>
