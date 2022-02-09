@@ -1,4 +1,5 @@
-<?php include_once "share/base.php";?><!DOCTYPE html>
+<?php include_once "share/base.php";?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

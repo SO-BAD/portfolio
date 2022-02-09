@@ -1,6 +1,5 @@
 <div id="skill">
         <?php
-            $Skill = new DB("skills");
             $rows = $Skill->all();
             foreach($rows as $row){
         ?>

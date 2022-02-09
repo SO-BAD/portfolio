@@ -1,6 +1,5 @@
 <div id="collections">
     <?php
-    $Collection = new DB("collections");
     $rows = $Collection->all();
     foreach ($rows as $row) {
     ?>
