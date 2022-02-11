@@ -23,7 +23,7 @@
     .c_edit{
     }
 </style>
-
+<h2>Collection</h2>
 <div class="collections">
     <div class="collection">
         <div class="c_name">
@@ -54,8 +54,8 @@
                 <?= $row['link']; ?>
             </div>
             <div class ="c_edit">
-                <button onclick="collection_edit(<?= $row['id'];?>)">edit</button>
-                <button onclick="collection_del(<?= $row['id'];?>)">del</button>
+                <button onclick="modal('edit','collections',<?= $row['id'];?>)">edit</button>
+                <button onclick="del_chk('del','collections',<?= $row['id'];?>)">del</button>
             </div>
         </div>
     <?php } ?>

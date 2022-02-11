@@ -33,6 +33,18 @@
             return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         }
 
+        public function del($id){
+            $sql = "DELETE FROM `$this->table` WHERE ";
+            if(is_array($id)){
+                foreach($id as $k=>$v){
+                    $tmp[] = " `$k` =  '$v'";
+                }
+                $sql .= implode(" AND ", $tmp);
+            }else{
+                $sql .= " `id` = '{$id}'";
+            }
+            $this->pdo->exec($sql);
+        }
     }
     $Resume = new DB("resume");
     $Skill = new DB("skills");

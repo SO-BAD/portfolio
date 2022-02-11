@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    min-height: 900px;
+    background-color: aquamarine;
+}
+#modalBG{
+    width: 100%;
+    height: 900px;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -999;
+    opacity: 0;
+}
+
+#modal{
+    width: 400px;
+    height: 600px;
+    background-color: #f2f2f2;
+    transform: rotateY(90deg);
+}

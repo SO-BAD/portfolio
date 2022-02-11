@@ -8,31 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>作品集後台管理</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        body {
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
-<body>
+<body onload="adjModal()" onresize="adjModal()">
+    <div id= "modalBG" >
+        <div id= "modal">
+
+        </div>
+    </div>
     <?php
         if(isset($_SESSION['id'])){
-            echo "<h2>Skill</h2>";
             include "./include/skill.php";
-            echo "<h2>Collection</h2>";
             include "./include/collection.php";
         }else{
-            echo "<a href='./login.php'>登入</a>";
+            include "./include/login.php";
         }
         
     ?>
@@ -40,10 +31,7 @@
 
 
     <script src="../js/jquery-3.6.0.min.js"></script>
-
-    <script>
-       
-    </script>
+    <script src ="./js/main.js"></script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@
         display: flex;
     }
 </style>
-
+<h2>Skill</h2>
 <div class="skills">
     <div class="skill">
         <div class="name">
@@ -51,8 +51,8 @@
                 <?= $row['img']; ?>
             </div>
             <div class ="edit">
-                <button onclick="skill_edit(<?= $row['id'];?>)">edit</button>
-                <button onclick="skill_del(<?= $row['id'];?>)">del</button>
+                <button onclick="modal('edit','skills',<?= $row['id'];?>)">edit</button>
+                <button onclick="del_chk('del','skills',<?= $row['id'];?>)">del</button>
             </div>
         </div>
     <?php } ?>
