@@ -32,7 +32,7 @@
 <script>
     function login_ck() {
 
-        $.post("./api/login_ck.php", {
+        $.post("./api/session.php", {
                 account: document.querySelector("#acc").value,
                 password: document.querySelector("#pw").value
             },

@@ -20,6 +20,7 @@
     </div>
     <?php
         if(isset($_SESSION['id'])){
+            echo "<button onclick='logout()'>登出</button><br>";
             include "./include/skill.php";
             include "./include/collection.php";
         }else{

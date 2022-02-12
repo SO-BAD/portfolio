@@ -1,6 +1,7 @@
 <div id="skill">
         <?php
-            $rows = $Skill->all();
+            $user = ($_GET['user']) ?? 1;
+            $rows = $Skill->all(['resume_id'=>$user]);
             foreach($rows as $row){
         ?>
         <div class="skill">

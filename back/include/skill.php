@@ -21,7 +21,7 @@
         display: flex;
     }
 </style>
-<h2>Skill</h2>
+<span style="font-size:26px;font-weight:700;">Skill</span> <button onclick="modal('add', 'skills', 'null')">新增</button>
 <div class="skills">
     <div class="skill">
         <div class="name">
@@ -38,7 +38,7 @@
         </div>
     </div>
     <?php
-    $rows = $Skill->all();
+    $rows = $Skill->all(['resume_id'=>$_SESSION['id']]);
     foreach ($rows as $row) { ?>
         <div class="skill">
             <div class="name">
@@ -52,7 +52,7 @@
             </div>
             <div class ="edit">
                 <button onclick="modal('edit','skills',<?= $row['id'];?>)">edit</button>
-                <button onclick="del_chk('del','skills',<?= $row['id'];?>)">del</button>
+                <button onclick="del_chk('skills',<?= $row['id'];?>)">del</button>
             </div>
         </div>
     <?php } ?>

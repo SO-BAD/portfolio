@@ -23,7 +23,7 @@
     .c_edit{
     }
 </style>
-<h2>Collection</h2>
+<span style="font-size:26px;font-weight:700;">Collection</span> <button onclick="modal('add', 'collections', 'null')">新增</button>
 <div class="collections">
     <div class="collection">
         <div class="c_name">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <?php
-    $rows = $Collection->all();
+    $rows = $Collection->all(['resume_id'=>$_SESSION['id']]);
     foreach ($rows as $row) { ?>
         <div class="collection">
             <div class="c_name">
@@ -55,7 +55,7 @@
             </div>
             <div class ="c_edit">
                 <button onclick="modal('edit','collections',<?= $row['id'];?>)">edit</button>
-                <button onclick="del_chk('del','collections',<?= $row['id'];?>)">del</button>
+                <button onclick="del_chk('collections',<?= $row['id'];?>)">del</button>
             </div>
         </div>
     <?php } ?>

@@ -1,6 +1,7 @@
 <div id="collections">
     <?php
-    $rows = $Collection->all();
+    $user = ($_GET['user']) ?? 1;
+    $rows = $Collection->all(['resume_id'=>$user]);
     foreach ($rows as $row) {
     ?>
         <div class="work_item">
