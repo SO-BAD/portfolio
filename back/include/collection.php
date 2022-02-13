@@ -1,37 +1,23 @@
 <style>
-    .collections {
-        width: 600px;
-        margin: auto;
-    }
-
     .collection {
         width: 100%;
         display: flex;
     }
 
-    .collection:nth-child(1) {
-        border-bottom: 2px solid #c0c0c0;
+    .collection *{
+        width: 25%;
     }
-
-    .c_name,.c_img,.c_edit {
-        width: 120px;
-    }
-    .c_link{
-        width: 240px;
-    }
-
-    .c_edit{
-    }
+    
 </style>
-<span style="font-size:26px;font-weight:700;">Collection</span> <button onclick="modal('add', 'collections', 'null')">新增</button>
-<div class="collections">
-    <div class="collection">
+<div class="content">
+    <span style="font-size:26px;font-weight:700;">Collection</span> <button onclick="modal('add', 'collections', 'null')">新增</button>
+    <div class="list collection">
         <div class="c_name">
-            name
+            img
         </div>
         
         <div class="c_img">
-            img
+            name
         </div>
         <div class="c_link">
             link
@@ -44,12 +30,14 @@
     $rows = $Collection->all(['resume_id'=>$_SESSION['id']]);
     foreach ($rows as $row) { ?>
         <div class="collection">
+            <div class="c_img"> 
+                <img src="../img/<?= $row['img']; ?>" alt="" style="width:100%;">
+                
+            </div>
             <div class="c_name">
                 <?= $row['name']; ?>
             </div>
-            <div class="c_img">
-                <?= $row['img']; ?>
-            </div>
+           
             <div class="c_link">
                 <?= $row['link']; ?>
             </div>

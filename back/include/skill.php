@@ -1,29 +1,20 @@
 <style>
-    .skills {
-        width: 600px;
-        margin: auto;
-    }
-
     .skill {
         width: 100%;
         display: flex;
     }
 
-    .skill:nth-child(1) {
-        border-bottom: 2px solid #c0c0c0;
-    }
-
     .skill * {
-        width: 150px;
+        width: 25%;
     }
 
     .edit{
-        display: flex;
+        /* display: flex; */
     }
 </style>
-<span style="font-size:26px;font-weight:700;">Skill</span> <button onclick="modal('add', 'skills', 'null')">新增</button>
-<div class="skills">
-    <div class="skill">
+<div class="content">
+    <span style="font-size:26px;font-weight:700;">Skill</span> <button onclick="modal('add', 'skills', 'null')">新增</button>
+    <div class="list skill">
         <div class="name">
             name
         </div>
@@ -61,6 +52,3 @@
 
 
 </div>
-<script>
-
-</script>

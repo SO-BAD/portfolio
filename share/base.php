@@ -85,3 +85,5 @@
     $Resume = new DB("resume");
     $Skill = new DB("skills");
     $Collection = new DB("collections");
+    $Workexp = new DB("workexp");
+    $Education = new DB("educations");

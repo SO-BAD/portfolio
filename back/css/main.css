@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
 }
 
 body {
@@ -19,7 +18,7 @@ body {
     background-color: rgba(0, 0, 0,.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     z-index: -999;
     opacity: 0;
 }
@@ -27,6 +26,35 @@ body {
 #modal{
     width: 400px;
     height: 600px;
+    padding: 20px;
     background-color: #f2f2f2;
     transform: rotateY(90deg);
+}
+.page{
+    width: 800px;
+    margin: auto;
+    display: flex;
+}
+.menu{
+    width: 200px;
+    padding-top: 60px;
+}
+.item{
+    width: 180px;
+    height: 30px;
+    margin: 10px;
+}
+.section{
+    width:600px;
+    position: relative;
+    padding: 20px;
+}
+
+.content{
+    width: 600px;
+    position: absolute;
+}
+.list {
+    border-bottom: 2px solid #c0c0c0;
+    display: flex;
 }

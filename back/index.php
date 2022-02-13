@@ -19,20 +19,38 @@
         </div>
     </div>
     <?php
-        if(isset($_SESSION['id'])){
-            echo "<button onclick='logout()'>登出</button><br>";
-            include "./include/skill.php";
-            include "./include/collection.php";
+        if(isset($_SESSION['id'])){    ?>
+            
+            <div class ='page'>
+                <nav class='menu'>
+                    <div class ="item"><?= $Resume->find($_SESSION['id'])['name'];?><button onclick='logout()' style="margin-left:40px;">登出</button></div>
+                    <div class ="item"><a href ='?'>resume</a></div>
+                    <div class ="item"><a href ='?do=education'>education</a></div>
+                    <div class ="item"><a href ='?do=workexp'>workexp</a></div>
+                    <div class ="item"><a href ='?do=skill'>skill</a></div>
+                    <div class ="item"><a href ='?do=collection'>collection</a></div>
+                   
+                </nav>
+                <div class='section'>
+            <?php   
+                if (isset($_GET['do']) && file_exists(("./include/" . $_GET['do'] . ".php"))) {
+                    $str = "./include/" . $_GET['do'] . ".php";
+                    include $str;
+                } else {
+                    include "./include/resume.php";
+                }
+                echo "</div>";
+                echo "</div>";
         }else{
             include "./include/login.php";
         }
-        
     ?>
     
 
 
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src ="./js/main.js"></script>
+    <script src ="./js/base.js"></script>
 </body>
 
 </html>

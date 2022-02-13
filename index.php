@@ -26,6 +26,9 @@
             </div>
         </nav>
     </div>
+    <?php
+        $user = ($_GET['user']) ?? 1;
+    ?>
     <div class="abc" id ="a">
 
     </div>
@@ -44,7 +47,7 @@
     
     <footer class="footer">
                 <h2>ConTact</h2>
-                <span>Email : abc@gmail.com</span>
+                <span>Email : <?= $Resume->find($user)['email'];?></span>
     </footer>
 </body>
 

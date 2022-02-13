@@ -32,6 +32,7 @@
             break;
         default:
             $DB->e(cuSQL($_POST['e']));
+            // echo(cuSQL($_POST['e']));
             break;
     }
 

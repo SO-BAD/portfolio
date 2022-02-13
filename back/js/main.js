@@ -1,44 +1,41 @@
 function adjModal() {
     $("#modalBG").css("height", window.innerHeight);
-    $("body").css("height", window.innerHeight);
+    // $("body").css("height", window.innerHeight);
 }
 
-function logout(){
+function logout() {
     $.post("./api/session.php", {
-        logout:'logout'
-    },()=>{
+        logout: 'logout'
+    }, () => {
         location.reload();
     }
-);
+    );
 }
 
 
 function modal(e, sort, id) {
 
-    $("#modal").load("./modal/" + sort + ".html", function () {
+    $("#modal").load("./modal/" + sort + ".php", function () {
 
-       
+
 
         if (e == "add") {
             $("#act").text("新增");
-            $("#act").attr("onclick", "crud('c','"+sort+"','null')")
+            $("#act").attr("onclick", "crud('c','" + sort + "','null')")
         } else {
             $("#act").text("修改");
-            $("#act").attr("onclick", "crud('u','"+sort+"','" + id + "')")
+            $("#act").attr("onclick", "crud('u','" + sort + "','" + id + "')")
             crud('r', sort, id);
         }
 
         // edit 用ajax 取得 資料
-        
+
 
         $("#modalBG").css({ "z-index": 999, 'opacity': 1 });
         $("#modal").css("transform", "rotateY(0deg)");
     });
 
 }
-
-
-
 
 
 
@@ -59,42 +56,43 @@ function del_chk(sort, id) {
     }
 };
 function crud(e, sort, id) {
-    let data =new Array();
-    if(e == 'c' || e == 'u'){
-        let input = document.querySelectorAll("input");
-        for (let i =0;i<input.length; i++){
-            data.push(input[i].value);
+
+    let data = new Array();
+
+    if (e == 'c' || e == 'u') {
+        if (sort == "resume") {
+            let resume = document.querySelectorAll(".resumeData");
+            for (let i = 0; i < resume.length; i++) {
+                data.push(resume[i].value);
+            }
+        } else {
+            let input = document.querySelector("#modal").querySelectorAll("input");
+            let chk_box = new Array();
+            for (let i = 0; i < input.length; i++) {
+                switch (input[i].type) {
+                    case 'checkbox':
+                        if (input[i].checked) {
+                            chk_box.push(input[i].value);
+                        }
+                        break;
+                    default:
+                        data.push(input[i].value);
+                        break;
+                }
+            }
+            if (document.querySelector("#modal").querySelectorAll("input[type='checkbox']").length)
+                data.push(chk_box.toString());
         }
     }
 
 
-    let col = new Array();
-    switch (sort){
-        case 'skills':
-            col = ['name','level','img'];
-            break;
-        case 'collections':
-            col = ['name','img','link'];
-            break;
-    }
-    
-    
-    
-    
-    $.post("api/crud.php", { e, sort, id, col, data}, (res) => {
-        
-        if(e =="r"){
-            console.log(res);
-            res = JSON.parse(res);
-            $("#name").val(res.name);
-            $("#img").val(res.img);
-            
-            if (sort == "skills") {
-                $("#level").val(res.level);
-            } else {
-                $("#link").val(res.link);
-            }
-        }else{
+    let db = new DB(sort);
+
+    $.post("api/crud.php", { e, sort, id, col: db.col, data }, (res) => {
+        // console.log(res);
+        if (e == "r") {
+            db.showVal(res);
+        } else {
             location.reload();
         }
     });
