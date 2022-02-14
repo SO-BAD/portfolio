@@ -29,6 +29,7 @@
                     <div class ="item"><a href ='?do=workexp'>workexp</a></div>
                     <div class ="item"><a href ='?do=skill'>skill</a></div>
                     <div class ="item"><a href ='?do=collection'>collection</a></div>
+                    <div class ="item"><a href ='?do=css'>css</a></div>
                    
                 </nav>
                 <div class='section'>

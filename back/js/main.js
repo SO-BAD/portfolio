@@ -22,7 +22,7 @@ function modal(e, sort, id) {
         if (e == "add") {
             $("#act").text("新增");
             $("#act").attr("onclick", "crud('c','" + sort + "','null')")
-        } else {
+        } else if( e== "edit"){
             $("#act").text("修改");
             $("#act").attr("onclick", "crud('u','" + sort + "','" + id + "')")
             crud('r', sort, id);
@@ -75,6 +75,8 @@ function crud(e, sort, id) {
                             chk_box.push(input[i].value);
                         }
                         break;
+                    case 'file':
+                        break;
                     default:
                         data.push(input[i].value);
                         break;
@@ -84,7 +86,21 @@ function crud(e, sort, id) {
                 data.push(chk_box.toString());
         }
     }
-
+    if (document.querySelector("#modal").querySelectorAll("input[type='file']").length && (e == "c" ||e == "u")) {
+        let image =  document.querySelector("#img").files[0];
+        data.push(image.name);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText)
+            }
+        }
+        xhr.open('POST', './api/crud.php', true);
+        var formdata = new FormData();
+        formdata.append('img', image);
+        formdata.append('sort', sort);
+        xhr.send(formdata);
+    }
 
     let db = new DB(sort);
 
@@ -96,4 +112,7 @@ function crud(e, sort, id) {
             location.reload();
         }
     });
+
+
+
 }

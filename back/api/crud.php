@@ -1,6 +1,6 @@
 <?php
     include_once "../../share/base.php";
-    $DB = new DB($_POST['sort']);
+    
 
 
     function cuSQL($e){
@@ -18,8 +18,9 @@
                 return $sql;
         }
     }
-        
-    switch($_POST['e']){
+    if(isset($_POST['e'])){
+        $DB = new DB($_POST['sort']);
+        switch($_POST['e']){
         case 'r':
             if($DB->find($_POST['id'])['resume_id'] == $_SESSION['id']){
                 echo json_encode($DB->find($_POST['id']));
@@ -34,6 +35,17 @@
             $DB->e(cuSQL($_POST['e']));
             // echo(cuSQL($_POST['e']));
             break;
+        }
     }
+    
+    if(isset($_FILES['img']['tmp_name'])){
+        move_uploaded_file($_FILES['img']['tmp_name'], '../../img/'.$_POST['sort']."/".$_FILES['img']['name']);
+        if($_POST['event']=="u"){
+            $DB = new DB("resume");
+            $DB->save(['id'=>$_SESSION['id'],'img'=>$_FILES['img']['name']]);
+        }
+    }
+
+    
 
 ?>

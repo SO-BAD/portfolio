@@ -31,7 +31,7 @@
     foreach ($rows as $row) { ?>
         <div class="collection">
             <div class="c_img"> 
-                <img src="../img/<?= $row['img']; ?>" alt="" style="width:100%;">
+                <img src="../img/collections/<?= $row['img']; ?>" alt="" style="width:100%;">
                 
             </div>
             <div class="c_name">

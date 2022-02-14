@@ -6,7 +6,6 @@
 
 body {
     width: 100%;
-    min-height: 900px;
     background-color: aquamarine;
 }
 #modalBG{
@@ -24,7 +23,7 @@ body {
 }
 
 #modal{
-    width: 400px;
+    min-width: 400px;
     height: 600px;
     padding: 20px;
     background-color: #f2f2f2;

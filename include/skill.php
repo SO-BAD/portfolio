@@ -5,7 +5,7 @@
         ?>
         <div class="skill">
             <div class="img">
-                <img src="img/<?= $row['img']?>"  style="width:100%;"alt="">
+                <img src="img/skills/<?= $row['img']?>"  style="width:100%;"alt="">
             </div>
             <div class="skill_intro">
                 <h2><?= $row['name']?></h2>

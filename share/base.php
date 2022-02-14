@@ -3,8 +3,11 @@
 
     class DB{
         private $dsn = "mysql:host=localhost;charset=utf8;dbname=portfolio;";
+        // private $dsn = "mysql:host=localhost;charset=utf8;dbname=s1100404;";
         private $root ="root";
+        // private $root ="s1100404";
         private $password = "";
+        // private $password = "s1100404";
         private $pdo;
 
         public function __construct($table)
@@ -37,12 +40,13 @@
                 foreach($data as $key =>$value){
                     $tmp[] = " `$key` = '{$value}'";
                 }
-                $sql .= implode(" AND ", $tmp) ." WHERE `id` = ". $data['id'];
+                $sql .= implode(",", $tmp) ." WHERE `id` = ". $data['id'];
             }else{
                 $sql = "INSERT INTO `$this->table`(`".implode("`,`",array_keys($data))."`) VALUES ('";
-                $sql .= implode("'='",$data)."')";
+                $sql .= implode("','",$data)."')";
             }
             // echo $sql;
+            $this->pdo->exec($sql);
         }
 
 
@@ -87,3 +91,10 @@
     $Collection = new DB("collections");
     $Workexp = new DB("workexp");
     $Education = new DB("educations");
+    $Css= new DB("Css");
+
+    function dd($arr){
+        echo "<pre>";
+        print_r($arr);
+        echo "</pre>";
+    }

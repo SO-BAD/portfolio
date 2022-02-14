@@ -28,6 +28,7 @@
     </div>
     <?php
         $user = ($_GET['user']) ?? 1;
+        echo "<input type='hidden' value='".$user."'>";
     ?>
     <div class="abc" id ="a">
 
@@ -49,6 +50,18 @@
                 <h2>ConTact</h2>
                 <span>Email : <?= $Resume->find($user)['email'];?></span>
     </footer>
+    <script>
+        $(document).ready(()=>{
+            let id = document.querySelector("input[type='hidden']").value;
+            $.post("api/css.php",{id},(res)=>{
+                let css = JSON.parse(res);
+                for(let i= 0;i<css.length;i++){
+                    $(css[i].name).css(css[i].attr,css[i].val);
+                    // console.log(css[i].name);
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
