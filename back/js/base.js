@@ -15,7 +15,7 @@ class DB{
                 this.col = ['school','project'];
                 break;
             case 'resume':
-                this.col = ['name','email','intro','autobiography'];
+                this.col = ['name','email','intro','autobiography','sh'];
                 break;
             case 'css':
                 this.col = ['name','attr','val'];

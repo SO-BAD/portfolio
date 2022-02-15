@@ -70,6 +70,14 @@ function crud(e, sort, id) {
             for (let i = 0; i < resume.length; i++) {
                 data.push(resume[i].value);
             }
+            let input = document.querySelectorAll("input[type='checkbox']");
+            let chk_box = new Array();
+            for(let i =0; i<input.length;i++){
+                if (input[i].checked == true) {
+                    chk_box.push(input[i].value);
+                }
+            }
+            data.push(chk_box.toString());
         } else {
             let input = document.querySelector("#modal").querySelectorAll("input");
             let chk_box = new Array();
@@ -108,9 +116,8 @@ function crud(e, sort, id) {
     }
 
     let db = new DB(sort);
-
     $.post("api/crud.php", { e, sort, id, col: db.col, data }, (res) => {
-        // console.log(res);
+        console.log(res);
         if (e == "r") {
             db.showVal(res);
         } else {

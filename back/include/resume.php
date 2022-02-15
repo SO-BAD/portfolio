@@ -1,6 +1,6 @@
 <?php
 $user = $Resume->find(['id' => $_SESSION['id']]);
-
+$sh_arr = explode(",",$user['sh']);
 ?>
 <div class="content">
 
@@ -21,6 +21,12 @@ $user = $Resume->find(['id' => $_SESSION['id']]);
     <div class="form-group">
         <label for="autobiography">Autobiography</label>
         <textarea class="form-control resumeData" id="autobiography" rows="3"><?= $user['autobiography'] ;?></textarea>
+    </div>
+    <div class="form-group">
+        <label for="">Layout</label><br>
+        <input type="checkbox" value="0" <?php echo (in_array(0,$sh_arr))?"checked":"" ;?>>intro<br>
+        <input type="checkbox" value="1" <?php echo (in_array(1,$sh_arr))?"checked":"" ;?>>skill<br>
+        <input type="checkbox" value="2" <?php echo (in_array(2,$sh_arr))?"checked":"" ;?>>collection<br>
     </div>
     <button class="btn btn-info" onclick="crud('u','resume','<?= $_SESSION['id'] ?>')"> 修改</button>
 

@@ -100,3 +100,5 @@
         print_r($arr);
         echo "</pre>";
     }
+
+    $layout = ['intro','skill','collection'];
