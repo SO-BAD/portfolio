@@ -13,20 +13,20 @@
 
     .login {
         margin-top: 100px;
-        padding: 10px;
-        width: 200px;
-        height: 80px;
-        background-color: bisque;
     }
 </style>
 
-<div class="login">
-    <div>acc <input type="text" id="acc"></div>
-    <div>pw <input type="password" id="pw"></div>
-    <div><input type="button" value="登入" onclick="login_ck()"> <a href="./index.php"> 首頁</a></div>
-
-
-</div>
+<form class="login">
+  <div class="form-group">
+    <label for="acc">Account</label>
+    <input type="email" class="form-control" id="acc" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="pw">Password</label>
+    <input type="password" class="form-control" id="pw">
+  </div>
+  <button type="button" onclick="login_ck()" class="btn btn-primary">Submit</button> 
+</form>
 
 
 <script>

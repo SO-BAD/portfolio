@@ -5,7 +5,7 @@
     <div class ="edit_box">
         
     </div>
-    <button onclick="clearModal()">取消</button>
+    <button class="btn btn-info" onclick="clearModal()">取消</button>
 </div>
 
 

@@ -58,9 +58,9 @@
                 }
                 $sql .= implode(" AND ", $tmp);
             }else{
-                $sql .= " `id` = $id";
+                $sql .= " `id` = '$id'";
             }
-
+            // echo $sql;
             return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         }
 
@@ -74,8 +74,10 @@
             }else{
                 $sql .= " `id` = '{$id}'";
             }
+            // echo $sql;
             $this->pdo->exec($sql);
         }
+        
         public function q($sql){
             return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -91,7 +93,7 @@
     $Collection = new DB("collections");
     $Workexp = new DB("workexp");
     $Education = new DB("educations");
-    $Css= new DB("Css");
+    $Css= new DB("css");
 
     function dd($arr){
         echo "<pre>";

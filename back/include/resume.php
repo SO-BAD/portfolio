@@ -2,23 +2,26 @@
 $user = $Resume->find(['id' => $_SESSION['id']]);
 
 ?>
-<div class ="content">
-    
-<span style="font-size:26px;font-weight:700;">Resume</span> <button onclick="modal('null','headshot','null')">大頭照</button>
-    <div>
-        姓名 : <input class="resumeData"  type="text" value="<?= $user['name'] ?>">
-    </div>
-    <div>
-        email : <input class="resumeData" type="text" value="<?= $user['email'] ?>">
-    </div>
+<div class="content">
 
-    <h4>intro</h4>
-    <textarea name="" id="" class="resumeData" cols="30" rows="10"><?= $user['intro'] ?></textarea>
+    <span style="font-size:26px;font-weight:700;">Resume</span> <button class="btn btn-success" onclick="modal('null','headshot','null')">大頭照</button>
     
-    <h4>autobiography</h4>
-    <textarea name="" id="" class="resumeData" cols="30" rows="10"><?= $user['autobiography'] ?></textarea>
-    <button onclick="crud('u','resume','<?= $_SESSION['id']?>')"> 修改</button>
-    
-    
-    
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control resumeData" id="name" placeholder="Please input name" value="<?= $user['name'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control resumeData" id="exampleFormControlInput1" placeholder="name@example.com" value="<?= $user['email'] ?>">
+    </div>
+    <div class="form-group">
+        <label for="intro">Intro</label>
+        <textarea class="form-control resumeData" id="intro" rows="3"><?= $user['intro'] ;?></textarea>
+    </div>
+    <div class="form-group">
+        <label for="autobiography">Autobiography</label>
+        <textarea class="form-control resumeData" id="autobiography" rows="3"><?= $user['autobiography'] ;?></textarea>
+    </div>
+    <button class="btn btn-info" onclick="crud('u','resume','<?= $_SESSION['id'] ?>')"> 修改</button>
+
 </div>

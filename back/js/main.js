@@ -3,6 +3,11 @@ function adjModal() {
     // $("body").css("height", window.innerHeight);
 }
 
+function load_ct(sort){
+    let sort_arr = ['resume','education','workexp','skill','collection','css'];
+    $(".section").load("./include/"+sort+".php");
+}
+
 function logout() {
     $.post("./api/session.php", {
         logout: 'logout'

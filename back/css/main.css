@@ -6,7 +6,6 @@
 
 body {
     width: 100%;
-    background-color: aquamarine;
 }
 #modalBG{
     width: 100%;
@@ -30,7 +29,7 @@ body {
     transform: rotateY(90deg);
 }
 .page{
-    width: 800px;
+    width: 900px;
     margin: auto;
     display: flex;
 }
@@ -45,10 +44,13 @@ body {
 }
 .section{
     width:600px;
+    margin-left: 50px;
     position: relative;
     padding: 20px;
 }
-
+.table{
+    margin-top: 30px;
+}
 .content{
     width: 600px;
     position: absolute;
