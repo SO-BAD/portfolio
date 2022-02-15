@@ -6,6 +6,10 @@
     <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
+    <label for="htc">HTC</label>
+    <input type="text" class="form-control" id="htc">
+  </div>
+  <div class="form-group">
     <label for="attr">Attr</label>
     <input type="text" class="form-control" id="attr">
   </div>

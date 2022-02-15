@@ -4,7 +4,8 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">name</th>
+                <th scope="col">selector</th>
+                <th scope="col">htc</th>
                 <th scope="col">attr</th>
                 <th scope="col">val</th>
                 <th scope="col">edit</th>
@@ -16,6 +17,7 @@
             foreach ($rows as $row) { ?>
                 <tr>
                     <td><?= $row['name']; ?></td>
+                    <td><?= $row['htc']; ?></td>
                     <td> <?= $row['attr']; ?></td>
                     <td> <?= $row['val']; ?></td>
                     <td>

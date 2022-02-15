@@ -116,6 +116,8 @@ function crud(e, sort, id) {
     }
 
     let db = new DB(sort);
+    // console.log(db.col);
+    // console.log(data);
     $.post("api/crud.php", { e, sort, id, col: db.col, data }, (res) => {
         console.log(res);
         if (e == "r") {

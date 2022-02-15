@@ -18,7 +18,7 @@ class DB{
                 this.col = ['name','email','intro','autobiography','sh'];
                 break;
             case 'css':
-                this.col = ['name','attr','val'];
+                this.col = ['name','htc','attr','val'];
                 break;
         }
     }
@@ -56,6 +56,7 @@ class DB{
                 break;
             case 'css':
                 $("#name").val(data.name);
+                $("#htc").val(data.htc);
                 $("#attr").val(data.attr);
                 $("#val").val(data.val);
                 break;

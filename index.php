@@ -70,7 +70,7 @@ $sh_arr = explode(",", $data['sh']);
 
     <footer class="footer">
         <h2>ConTact</h2>
-        <span>Email : <?= $Resume->find($user)['email']; ?></span>
+        <span>Email : <?= $data['email']; ?></span>
     </footer>
     <script>
         $(document).ready(() => {
@@ -80,7 +80,14 @@ $sh_arr = explode(",", $data['sh']);
             }, (res) => {
                 let css = JSON.parse(res);
                 for (let i = 0; i < css.length; i++) {
-                    $(css[i].name).css(css[i].attr, css[i].val);
+                    switch(css[i].htc){
+                        case 't':
+                            $(css[i].name).text(css[i].val);
+                            break;
+                        case 'c':
+                            $(css[i].name).css(css[i].attr, css[i].val);
+                            break;
+                    }
                     // console.log(css[i].name);
                 }
             })
