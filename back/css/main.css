@@ -6,6 +6,7 @@
 
 body {
     width: 100%;
+    background-color: #c0c0c0;
 }
 #modalBG{
     width: 100%;
@@ -36,6 +37,7 @@ body {
 .menu{
     width: 200px;
     padding-top: 60px;
+    border-radius: 20px;
 }
 .item{
     width: 180px;
@@ -43,17 +45,19 @@ body {
     margin: 10px;
 }
 .section{
-    width:600px;
-    margin-left: 50px;
+    width:700px;
     position: relative;
-    padding: 20px;
 }
 .table{
     margin-top: 30px;
 }
 .content{
+    margin: auto;
     width: 600px;
-    position: absolute;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-top: 10px;
+    border-radius: 20px;
 }
 .list {
     border-bottom: 2px solid #c0c0c0;
