@@ -23,11 +23,14 @@
         </div>
     </div>
     <?php
-    if (isset($_SESSION['id'])) {    ?>
+    if (isset($_SESSION['id'])) {    
+        $data = $Resume->find($_SESSION['id']);
+        ?>
 
         <div class='page'>
             <nav class='menu list-group'>
-                <div class="list-group-item "><?= $Resume->find($_SESSION['id'])['name']; ?><button class="btn btn-dark" onclick='logout()' style="margin-left:40px;">登出</button></div>
+                <div class="list-group-item"><img src="../img/headshot/small_<?= $data['img']; ?>" style="width:100%;"alt=""></div>
+                <div class="list-group-item "><?= $data['name']; ?><button class="btn btn-dark" onclick='logout()' style="margin-left:40px;">登出</button></div>
                 <div class="list-group-item"><a href='?'>Resume</a></div>
                 <div class="list-group-item"><a href='?do=education'>Education</a></div>
                 <div class="list-group-item"><a href='?do=workexp'>Workexp</a></div>

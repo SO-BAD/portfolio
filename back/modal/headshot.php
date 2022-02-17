@@ -1,9 +1,8 @@
-<div class="box">
-    <div class="input_img">
-        請將圖片拖曳到此增加
-    </div>
-    <div class ="edit_box">
-        
+<div id="out_box">
+    <div class="box">
+        <div class="input_img">
+            請將圖片拖曳到此增加
+        </div>
     </div>
     <button class="btn btn-info" onclick="clearModal()">取消</button>
 </div>
@@ -14,8 +13,6 @@
         margin: auto;
         min-width: 300px;
         min-height: 300px;
-        max-height: 500px;
-        overflow: auto;
     }
 
     .input_img {
@@ -24,6 +21,7 @@
         width: 300px;
         height: 300px;
     }
+
 </style>
 <script>
     var box = document.querySelector('.box');
@@ -44,7 +42,10 @@
         formdata.append('sort', 'headshot');
         formdata.append('event', 'u');
         xhr.send(formdata);
-        $(".input_img").hide();
-        document.querySelector(".edit_box").innerHTML="<img style ='width:100%;'src='../img/headshot/"+e.dataTransfer.files[0].name+"'>";
+        clearModal();
+        // alert("上傳成功");
+        // console.log(e.dataTransfer.files[0]);
+        // location.reload();
+        $(".section").load("./modal/edit.php",{img:e.dataTransfer.files[0].name},()=>{})
     }
 </script>

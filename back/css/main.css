@@ -24,6 +24,7 @@ body {
 
 #modal{
     min-width: 400px;
+    max-width:600px;
     height: 600px;
     padding: 20px;
     background-color: #f2f2f2;
